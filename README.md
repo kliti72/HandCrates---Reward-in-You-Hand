@@ -2,7 +2,7 @@
 
 Turn any block into a customizable physical crate for your Hytale server — create, fill, and hand out reward crates entirely in-game.
 
-![Crate banner](chat_command.png)
+![Crate banner](UPLOAD_BANNER.png)
 
 ## Features
 
@@ -13,20 +13,51 @@ Turn any block into a customizable physical crate for your Hytale server — cre
 - List, edit, delete crates anytime
 - Hot reload — no server restart needed
 
-## Commands & Examples
+## Example: Creating a Custom Crate
 
-| Command | Example |
+```
+# Create Custom Crates Reward
+/handcrates --create=Dungeon --blocktype=Furniture_Desert_Chest_Small
+
+# Give Custom Crates Reward Item
+/handcrates --give=Dungeon --player=kliTi2000
+
+# Set Item Name Display
+/handcrates --edit=Dungeon --display="<red> Vote <bold> Key </bold> </red>"
+
+# Set Lore Example
+/handcrates --edit=Dungeon --lore="<green> This Crates give you reward of doungeon </green>"
+
+# Set Reward (opens in-game GUI editor)
+/handcrates --edit=Dungeon
+```
+
+![Reward editor GUI](REWARD.png)
+
+## All Commands
+
+| Command | Description |
 |---|---|
-| Create a crate | `/handcrates --create=Winter --type=Furniture_Lumberjack_Chest_Small` |
-| Set display name | `/handcrates --create=Winter --display=<green><bold>Winter Crate</bold></green>` |
-| Set lore | `/handcrates --edit=Winter --lore="Open with care..."` |
-| Edit rewards (opens GUI) | `/handcrates --edit=Winter` |
-| Give to a player | `/handcrates --give=Winter --player=Steve` |
-| List all crates | `/handcrates --list=true` |
-| Delete a crate | `/handcrates --delete=Winter` |
-| Reload plugin | `/handcrates --reload=true` |
+| `/handcrates --create={name} --blocktype={type}` | Create a new crate |
+| `/handcrates --edit={name}` | Open the reward editor GUI |
+| `/handcrates --edit={name} --lore="..."` | Set crate lore |
+| `/handcrates --edit={name} --display="..."` | Set crate display name |
+| `/handcrates --give={name} --player={player}` | Give a crate to a player |
+| `/handcrates --list=true` | List all crates |
+| `/handcrates --delete={name}` | Delete a crate |
+| `/handcrates --reload=true` | Reload the plugin |
 
-![Reward editor GUI](IMAGE_PLACEHOLDER_GUI.png)
+## Configurable Messages
+
+You can customize the plugin's messages by editing the `config.json` file:
+
+| Key | Default value | Placeholder |
+|---|---|---|
+| `open` | `You open the chest {crates}` | `{crates}` → crate name |
+| `give` | `You give crates {crates}` | `{crates}` → crate name |
+| `recive` | `You recive crates {crates}` | `{crates}` → crate name |
+| `inventory_full` | `<red> Your inventory not have amount space. </red>` | — |
+
 
 ## Installation
 
@@ -34,20 +65,10 @@ Turn any block into a customizable physical crate for your Hytale server — cre
 2. Restart the server
 3. Run `/handcrates --list=true` to confirm it's loaded
 
-# Create Custom Crates Reward
-/handcrates --create=Dungeon --blocktype=Furniture_Desert_Chest_Small
-# Give Custom Crates Reward Item
-/handcrates --give=Dungeon --player=kliTi2000
-# Set Item Name Display:
-/handcrates --edit=Dungeon --display="<red> Vote <bold> Key  </bold> </red>"
-# Set Lore Example:
-/handcrates --edit=Dungeon --lore="<green> This Crates give you reward of doungeon </green>"
-# Set Reward
-/handcrates --edit=Dungeon
-![Crate banner](UPLOAD_REWARD.png)
+## Requirements
 
-Hytale server with operator/admin permissions to manage commands.
-or `handcrates.admin`
+Hytale server with operator/admin or `handcrates.admin` permissions to manage commands.
+Translate inventory error, o config.json
 ---
 
 *Feedback and feature requests welcome via the project page.*
