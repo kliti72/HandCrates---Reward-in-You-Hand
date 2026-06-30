@@ -37,6 +37,9 @@ Turn any block into a customizable physical crate for your Hytale server — cre
 
 ![Reward editor GUI](REWARD.png)
 
+### Open Animations
+******![Crate banner](ANIMATION.png)
+
 ## All Commands
 
 | Command | Description |
