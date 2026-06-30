@@ -1,0 +1,16 @@
+Group #SectionLabel {
+  LayoutMode: Left;
+  Anchor: (Height: 25);
+  Background: (Color: #101925(0.55));
+  Padding: (Right: 8);
+
+  Group #Rail {
+    Anchor: (Width: 3, Right: 7);
+    Background: (Color: #2f5c82(0.8));
+  }
+
+  Label #Label {
+    Padding: (Top: 5);
+    Style: (FontSize: 13, TextColor: #8fa4b7, HorizontalAlignment: Start);
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "Group": "pvpshield",
+    "Name": "CustomItemReward",
+    "description": "Manage you spawn.",
+    "ServerVersion": "*",
+    "Main": "com.pvpshield.customitemreward.CustomItemReward",
+    "Version": "0.0.2",
+    "Website": "",
+    "Dependencies": {},
+    "OptionalDependencies": {},
+    "LoadBefore": {},
+    "DisabledByDefault": false,
+    "IncludesAssetPack": true,
+    "SubPlugins": []
+}

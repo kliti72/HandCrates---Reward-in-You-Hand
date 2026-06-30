@@ -1,0 +1,34 @@
+$C = "../../Common.ui";
+$Sounds = "../../Sounds.ui";
+
+Group {
+  LayoutMode: Left;
+  Anchor: (Bottom: 6);
+
+  Label #Label {
+    Anchor: (Left: 6, Right: 10, Width: 130);
+    Style: (...$C.@DefaultLabelStyle, VerticalAlignment: Center, Wrap: true);
+    TextTooltipStyle: $C.@DefaultTextTooltipStyle;
+  }
+
+  Button #PickerButton {
+    Anchor: (Left: 0, Right: 8, Width: 360, Height: $C.@DropdownBoxHeight);
+    Style: ButtonStyle(
+      Default: (Background: PatchStyle(TexturePath: "../../Common/Dropdown.png", Border: 16)),
+      Hovered: (Background: PatchStyle(TexturePath: "../../Common/DropdownHovered.png", Border: 16)),
+      Pressed: (Background: PatchStyle(TexturePath: "../../Common/DropdownPressed.png", Border: 16)),
+      Sounds: $Sounds.@ButtonsLight
+    );
+
+    Label #PickerLabel {
+      Anchor: (Left: 8, Right: 28, Top: 0, Bottom: 0);
+      Style: (...$C.@DefaultDropdownBoxLabelStyle, HorizontalAlignment: Start);
+    }
+
+    Sprite #CaretIcon {
+      Anchor: (Width: 13, Height: 18, Right: 8, Top: 7);
+      TexturePath: "../../Common/DropdownCaret.png";
+      Frame: (Width: 13, Height: 18, PerRow: 1, Count: 1);
+    }
+  }
+}

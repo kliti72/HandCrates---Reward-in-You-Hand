@@ -1,0 +1,31 @@
+@LabelStyle = (
+  Hovered: (
+    Background: #000000(0.2),
+  )
+);
+
+@SelectedLabelStyle = (
+  Default: (
+    LabelStyle: (RenderBold: true)
+  ),
+  Hovered: (
+    LabelStyle: (RenderBold: true),
+    Background: #000000(0.2)
+  )
+);
+
+@ActiveLabelStyle = (
+  Default: (
+    LabelStyle: (RenderBold: true),
+    Background: #7a9cc6(0.25)
+  ),
+  Hovered: (
+    LabelStyle: (RenderBold: true),
+    Background: #7a9cc6(0.35)
+  )
+);
+
+TextButton #Button {
+  Padding: (Full: 6);
+  Style: @LabelStyle;
+}

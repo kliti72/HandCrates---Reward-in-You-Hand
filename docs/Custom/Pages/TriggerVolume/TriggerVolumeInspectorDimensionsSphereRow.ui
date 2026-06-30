@@ -1,0 +1,27 @@
+$C = "../../Common.ui";
+
+Group {
+  LayoutMode: Left;
+  Anchor: (Bottom: 6);
+
+  Label #Label {
+    Anchor: (Left: 6, Right: 10, Width: 130);
+    Style: (...$C.@DefaultLabelStyle, VerticalAlignment: Center, Wrap: true);
+    TextTooltipStyle: $C.@DefaultTextTooltipStyle;
+  }
+
+  Group {
+    LayoutMode: Left;
+    Anchor: (Width: 160, Left: 0, Right: 8);
+
+    Label #RadiusLabel {
+      Anchor: (Width: 56);
+      Style: (...$C.@DefaultLabelStyle, VerticalAlignment: Center);
+    }
+
+    $C.@NumberField #Radius {
+      @Anchor = (Width: 104);
+      Format: (MinValue: 0.25, MaxValue: 1000, Step: 0.25, MaxDecimalPlaces: 2, Placeholder: "0.0");
+    }
+  }
+}

@@ -1,0 +1,4 @@
+Label {
+  Anchor: (Top: 4, Bottom: 0, Left: 4);
+  Style: (FontSize: 13, TextColor: #9aacbc, HorizontalAlignment: Start);
+}

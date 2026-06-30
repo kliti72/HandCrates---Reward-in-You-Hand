@@ -1,0 +1,15 @@
+{
+    "Group": "pvpshield",
+    "Name": "SpawnTale",
+    "description": "Manage you spawn.",
+    "ServerVersion": "*",
+    "Main": "com.pvpshield.spawntale.SpawnTale",
+    "Version": "0.0.2",
+    "Website": "",
+    "Dependencies": {},
+    "OptionalDependencies": {},
+    "LoadBefore": {},
+    "DisabledByDefault": false,
+    "IncludesAssetPack": true,
+    "SubPlugins": []
+}

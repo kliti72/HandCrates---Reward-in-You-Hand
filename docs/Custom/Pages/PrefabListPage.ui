@@ -1,0 +1,61 @@
+$C = "../Common.ui";
+$Browser = "PrefabBrowser.ui";
+
+$C.@PageOverlay {
+  Anchor: (Top: 130);
+  Background: #000000(0.15);
+}
+
+Group #PrefabGroup {
+  Anchor: (Height: 700);
+  LayoutMode: Center;
+
+  $C.@Container {
+    Anchor: (Width: 600, Height: 700);
+
+    #Title {
+      $C.@Title {
+        @Text = %server.customUI.prefabListPage.title;
+      }
+    }
+
+    #Content {
+      LayoutMode: Top;
+
+      Label #CurrentPath {
+        Anchor: (Bottom: 8, Horizontal: 4);
+        Style: (...$C.@DefaultLabelStyle, FontSize: 12, TextColor: #6a7d8f);
+        Text: "";
+      }
+
+      $Browser.@PrefabBrowserContent {
+        FlexWeight: 1;
+      }
+    }
+  }
+
+  $C.@Container #PreviewBackdrop {
+    Anchor: (Left: 10, Top: 0, Width: 600, Height: 700);
+    Visible: true;
+
+    #Title {
+      $C.@Title {
+        @Text = %server.customUI.prefabBrowser.previewTitle;
+      }
+    }
+
+    #Content {
+      LayoutMode: Full;
+
+      PrefabPreviewComponent #PrefabPreview {
+        AllowDragYaw: true;
+        AllowDragPitch: true;
+        AllowZoom: true;
+        AllowPan: true;
+        ShowAnchor: true;
+      }
+    }
+  }
+}
+
+$C.@BackButton {}

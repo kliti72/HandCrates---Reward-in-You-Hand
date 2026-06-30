@@ -1,0 +1,39 @@
+$C = "../Common.ui";
+
+@PrefabBrowserContent = Group {
+  LayoutMode: Top;
+
+  Group {
+    LayoutMode: Left;
+    Anchor: (Bottom: 10, Height: $C.@DropdownBoxHeight);
+
+    $C.@SmallSecondaryTextButton #HomeButton {
+      @Text = %server.customUI.prefabBrowser.assetsButton;
+      @Anchor = (Right: 6, Height: $C.@DropdownBoxHeight);
+      Padding: (Horizontal: 10);
+    }
+
+    $C.@DropdownBox #RootSelector {
+      @Anchor = (Right: 6, Width: 150);
+      Visible: false;
+    }
+
+    $C.@TextField #SearchInput {
+      @Anchor = (Left: 0);
+      FlexWeight: 1;
+      PlaceholderText: %server.customUI.prefabBrowser.searchPlaceholder;
+    }
+  }
+
+  Group #FileList {
+    FlexWeight: 1;
+    LayoutMode: TopScrolling;
+    ScrollbarStyle: $C.@DefaultScrollbarStyle;
+  }
+
+  $C.@TextButton #LoadButton {
+    @Text = %server.customUI.prefabBrowser.loadButton;
+    @Anchor = (Top: 8, Height: 36);
+    Visible: false;
+  }
+};

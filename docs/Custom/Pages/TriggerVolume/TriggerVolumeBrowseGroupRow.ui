@@ -1,0 +1,24 @@
+@NormalRowStyle = (
+  Hovered: (Background: PatchStyle(Color: #1a2538))
+);
+
+@SelectedRowStyle = (
+  Default: (Background: PatchStyle(Color: #1f2d44)),
+  Hovered: (Background: PatchStyle(Color: #1f2d44)),
+  Pressed: (Background: PatchStyle(Color: #1f2d44))
+);
+
+Button #Row {
+  LayoutMode: Left;
+  Anchor: (Height: 28);
+  Style: @NormalRowStyle;
+  Padding: (Left: 8, Right: 4);
+
+  Group #ColorSwatch {
+    Anchor: (Width: 14, Height: 14, Right: 6);
+  }
+
+  Label #Label {
+    Style: (FontSize: 14, RenderBold: true, TextColor: #bfcdd5, VerticalAlignment: Center);
+  }
+}

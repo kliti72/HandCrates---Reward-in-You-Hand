@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"com.pvpshield.customitemreward"},{"l":"com.pvpshield.customitemreward.config"},{"l":"com.pvpshield.customitemreward.config.model"},{"l":"com.pvpshield.customitemreward.event"},{"l":"com.pvpshield.customitemreward.ui"},{"l":"com.pvpshield.customitemreward.utils"}];updateSearchResults();

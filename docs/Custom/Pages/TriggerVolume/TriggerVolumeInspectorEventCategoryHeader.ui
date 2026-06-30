@@ -1,0 +1,13 @@
+$C = "../../Common.ui";
+$Sounds = "../../Sounds.ui";
+
+TextButton #Header {
+  Style: (
+    Default: (Background: (Color: #1a2a3d), LabelStyle: (...$C.@DefaultButtonLabelStyle, HorizontalAlignment: Start, FontSize: 13, RenderUppercase: false, RenderBold: true, TextColor: #c1d2df)),
+    Hovered: (Background: (Color: #243955), LabelStyle: (...$C.@DefaultButtonLabelStyle, HorizontalAlignment: Start, FontSize: 13, RenderUppercase: false, RenderBold: true, TextColor: #d9e7f2)),
+    Pressed: (Background: (Color: #2b4568), LabelStyle: (...$C.@DefaultButtonLabelStyle, HorizontalAlignment: Start, FontSize: 13, RenderUppercase: false, RenderBold: true, TextColor: #d9e7f2)),
+    Sounds: $Sounds.@ButtonsLight
+  );
+  Anchor: (Top: 8, Height: 26);
+  Padding: (Left: 10, Right: 8);
+}
