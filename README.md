@@ -1,8 +1,8 @@
 # Hand Crates
 
 Turn any block into a customizable physical crate for your Hytale server — create, fill, and hand out reward crates entirely in-game.
-
-![Crate banner](UPLOAD_BANNER.png)
+******
+******![banner](BANNER.png)
 
 ## Features
 
@@ -12,6 +12,9 @@ Turn any block into a customizable physical crate for your Hytale server — cre
 - Give crates directly to players via command
 - List, edit, delete crates anytime
 - Hot reload — no server restart needed
+
+******![Crate banner](COMMANDS_BANNER.png)
+
 
 ## Example: Creating a Custom Crate
 
@@ -65,10 +68,10 @@ You can customize the plugin's messages by editing the `config.json` file:
 2. Restart the server
 3. Run `/handcrates --list=true` to confirm it's loaded
 
-## Requirements
+## Permissions
 
+---
 Hytale server with operator/admin or `handcrates.admin` permissions to manage commands.
-Translate inventory error, o config.json
 ---
 
 *Feedback and feature requests welcome via the project page.*
