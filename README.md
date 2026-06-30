@@ -2,7 +2,7 @@
 
 Turn any block into a customizable physical crate for your Hytale server — create, fill, and hand out reward crates entirely in-game.
 
-![Crate banner](IMAGE_PLACEHOLDER_BANNER.png)
+![Crate banner](chat_command.png)
 
 ## Features
 
@@ -34,10 +34,20 @@ Turn any block into a customizable physical crate for your Hytale server — cre
 2. Restart the server
 3. Run `/handcrates --list=true` to confirm it's loaded
 
-## Requirements
+# Create Custom Crates Reward
+/handcrates --create=Dungeon --blocktype=Furniture_Desert_Chest_Small
+# Give Custom Crates Reward Item
+/handcrates --give=Dungeon --player=kliTi2000
+# Set Item Name Display:
+/handcrates --edit=Dungeon --display="<red> Vote <bold> Key  </bold> </red>"
+# Set Lore Example:
+/handcrates --edit=Dungeon --lore="<green> This Crates give you reward of doungeon </green>"
+# Set Reward
+/handcrates --edit=Dungeon
+![Crate banner](UPLOAD_REWARD.png)
 
 Hytale server with operator/admin permissions to manage commands.
-
+or `handcrates.admin`
 ---
 
 *Feedback and feature requests welcome via the project page.*

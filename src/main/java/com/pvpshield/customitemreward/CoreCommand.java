@@ -73,9 +73,9 @@ public class CoreCommand extends AbstractPlayerCommand {
         this.plugin = plugin;
         this.reload  = withOptionalArg("reload",  "Reload the plugin",             ArgTypes.BOOLEAN);
         this.create  = withOptionalArg("create",  "Name of the crate to create",   ArgTypes.STRING);
-        this.display = withOptionalArg("display", "Display name for a crate",      ArgTypes.STRING);
+        this.type    = withOptionalArg("blocktype",    "Block type for the crate",       ArgTypes.BLOCK_TYPE_ASSET);
         this.edit    = withOptionalArg("edit",    "Name of the crate to edit",      ArgTypes.STRING);
-        this.type    = withOptionalArg("type",    "Block type for the crate",       ArgTypes.BLOCK_TYPE_ASSET);
+        this.display = withOptionalArg("display", "Display name for a crate",      ArgTypes.STRING);
         this.list    = withOptionalArg("list",    "List all crates",                ArgTypes.BOOLEAN);
         this.lore    = withOptionalArg("lore",    "Set lore of crates",                ArgTypes.STRING);
         this.delete  = withOptionalArg("delete",  "Name of the crate to delete",   ArgTypes.STRING);
@@ -116,13 +116,13 @@ public class CoreCommand extends AbstractPlayerCommand {
             return;
         }
 
-        if (edit.provided(ctx)) {
-            handleEdit(ctx, store, ref, sender, world);
+        if (edit.provided(ctx) && display.provided(ctx)) {
+            handleDisplayName(ctx, sender);
             return;
         }
 
-        if (display.provided(ctx) && create.provided(ctx)) {
-            handleDisplayName(ctx, sender);
+        if (edit.provided(ctx)) {
+            handleEdit(ctx, store, ref, sender, world);
             return;
         }
 
@@ -206,7 +206,6 @@ public class CoreCommand extends AbstractPlayerCommand {
     private void handleLore(CommandContext ctx, Store<EntityStore> store, Ref<EntityStore> ref, PlayerRef sender, World world) {
         String crateName = edit.get(ctx);
         String loreC = lore.get(ctx);
-        ConfigManager configManager = plugin.getConfigManager();
         ConfigAnimatedCrates config = plugin.getPluginConfig();
 
         if (!config.isExistKeys(crateName)) {
@@ -216,11 +215,11 @@ public class CoreCommand extends AbstractPlayerCommand {
 
         sendMessage(sender, "Lore is updated.");
         config.updateLore(crateName, loreC);
-        configManager.save();
+        plugin.getConfigManager().save();
     }
 
     private void handleDisplayName(CommandContext ctx, PlayerRef sender) {
-        String crateName    = create.get(ctx);
+        String crateName    = edit.get(ctx);
         String displayName  = display.get(ctx);
         ConfigAnimatedCrates config = plugin.getPluginConfig();
 
@@ -343,9 +342,10 @@ public class CoreCommand extends AbstractPlayerCommand {
 
     private static void printHelp(PlayerRef recipient) {
         recipient.sendMessage(TinyMsg.parse("<green><bold>Hand Crates — Commands</bold></green>"));
-        printHelpLine(recipient, "--create={name} --type={type}",              "Create a new crate");
+        printHelpLine(recipient, "--create={name} --blocktype={type}",              "Create a new crate");
         printHelpLine(recipient, "--edit={name}",                              "Edit the rewards for a crate");
         printHelpLine(recipient, "--edit={name} --lore=\"lore\"",              "Create a new crate");
+        printHelpLine(recipient, "--edit={name} --display=\"displayName\"",              "Edit the display name.");
         printHelpLine(recipient, "--list=true",                                "List all crates");
         printHelpLine(recipient, "--give={crate} --player={player}",           "Give a crate to a player");
         printHelpLine(recipient, "--create={name} --display={display_name}",   "Set display name (supports color tags)");
