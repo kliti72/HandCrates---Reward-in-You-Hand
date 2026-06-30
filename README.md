@@ -1,4 +1,4 @@
-# Hand Crates
+[# Hand Crates
 
 Turn any block into a customizable physical crate for your Hytale server — create, fill, and hand out reward crates entirely in-game.
 ******
@@ -13,9 +13,9 @@ Turn any block into a customizable physical crate for your Hytale server — cre
 - List, edit, delete crates anytime
 - Hot reload — no server restart needed
 
-******![Crate banner](COMMANDS_BANNER.png)
+![Cbanner](COMMANDS_BANNER.png)
 
-
+]([]())
 ## Example: Creating a Custom Crate
 
 ```
@@ -38,7 +38,7 @@ Turn any block into a customizable physical crate for your Hytale server — cre
 ![Reward editor GUI](REWARD.png)
 
 ### Open Animations
-******![Crate banner](ANIMATION.png)
+![Crate banner](ANIMATION.png)
 
 ## All Commands
 
